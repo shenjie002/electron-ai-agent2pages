@@ -8,11 +8,13 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
+    "allowJs": true,
     "outDir": "./dist" // 輸出目錄
+    // "baseUrl": "./", // 根目錄
+    // "paths": {
+    //   "ai/react": ["node_modules/ai/react/dist/index.d.ts"] // 手动指定类型路径
+    // }
   },
   "include": ["./main", "./renderer/src", "./preload.ts", "./renderer/src/types/global.d.ts"],
-  "exclude": ["node_modules"],
-  "paths": {
-    "ai/react": ["node_modules/ai/react/dist/index.d.ts"] // 手动指定类型路径
-  }
+  "exclude": ["node_modules"]
 }

@@ -10,8 +10,9 @@ module.exports = {
     output: 'release',
     buildResources: 'resources',
   },
-  files: ['dist/**/*', 'main/**/*', 'preload.js', 'package.json', 'resources/**/*'],
-  asar: true,
+  files: ['dist/**/*', 'package.json', 'resources/**/*'],
+  asar: false,
+
   publish: [
     {
       provider: 'generic',

@@ -17,7 +17,7 @@ import { useClassName } from './styles'
 
 const TldrawEdit: FC<TldrawEditProps> = ({ onSubmit }) => {
   const [, refresh] = useState({})
-  const editorRef = useRef<Editor>(null)
+  const editorRef = useRef<any>(null)
   const classNames = useClassName()
   const [visible, setVisible] = useState(false)
 

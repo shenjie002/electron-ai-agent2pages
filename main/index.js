@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 const { autoUpdater } = require('electron-updater')
+const fs = require('fs')
 const path = require('path')
 
 let mainWindow = null
@@ -29,7 +30,7 @@ const createWindow = async () => {
     mainWindow.loadURL('http://localhost:3000') // Vite 開發伺服器
     mainWindow.webContents.openDevTools()
   } else {
-    mainWindow.loadFile(path.join(__dirname, '../dist/renderer/index.html'))
+    mainWindow.loadFile(path.join(__dirname, '../renderer/index.html'))
   }
 
   mainWindow.on('closed', () => {

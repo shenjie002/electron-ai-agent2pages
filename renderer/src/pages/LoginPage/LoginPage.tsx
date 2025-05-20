@@ -21,20 +21,6 @@ const UPDATE_CHECK_TIMEOUT = 30000 // Timeout for a single update check attempt 
 const OVERALL_UPDATE_PROCESS_TIMEOUT = 60000 // If no definitive update status in this time, stop periodic checks (ms)
 
 // Define window.electronAPI if it's not already defined for type safety
-declare global {
-  interface Window {
-    electronAPI?: {
-      requestUpdate: () => void
-      downloadUpdate: () => void
-      applyUpdate: () => void
-      onUpdateAvailable: (callback: () => void) => void
-      onUpdateNotAvailable: (callback: () => void) => void
-      onDownloadProgress: (callback: (progress: number) => void) => void
-      onUpdateDownloaded: (callback: () => void) => void
-      onUpdateError: (callback: (message: string) => void) => void
-    }
-  }
-}
 
 function LoginPage() {
   const navigate = useNavigate()

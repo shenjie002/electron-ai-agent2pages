@@ -50,7 +50,7 @@ const Markdown: React.FC<MarkdownProps> = ({ source, isChatting = false, isStrea
     }
   }, [source, isChatting, isStream])
 
-  const components = useMemo<MarkdownComponents>(
+  const components = useMemo<any>(
     () => ({
       pre: 'div',
       p: (pProps: ParagraphProps) => <p {...pProps} dir="auto" />,
@@ -77,13 +77,13 @@ const Markdown: React.FC<MarkdownProps> = ({ source, isChatting = false, isStrea
   return (
     <div className={className}>
       <ReactMarkdown
-        className={`markdown ${
-          isChatting ? `${visibleContent ? 'waitingAnimation' : 'animation'}` : ''
-        }`}
+        // className={`markdown ${
+        //   isChatting ? `${visibleContent ? 'waitingAnimation' : 'animation'}` : ''
+        // }`}
         remarkPlugins={[RemarkMath, RemarkGfm, RemarkBreaks]}
         rehypePlugins={[RehypeKatex]}
         components={components}
-        linkTarget={'_blank'}
+        // linkTarget={'_blank'}
       >
         {isStream ? visibleContent : source}
       </ReactMarkdown>
