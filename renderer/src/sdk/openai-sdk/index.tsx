@@ -1,5 +1,3 @@
-'use client'
-
 import { useState } from 'react'
 import { nanoid } from 'nanoid'
 import { Message } from '../../components/ChatMessages/interface'

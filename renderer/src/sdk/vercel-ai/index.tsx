@@ -1,5 +1,3 @@
-'use client'
-
 import { Message, useChat } from '@ai-sdk/react'
 import { nanoid } from 'nanoid'
 import ChatMessages from '../../components/ChatMessages/ChatMessages'
