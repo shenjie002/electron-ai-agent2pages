@@ -11,7 +11,7 @@ const ChatMainLayout: React.FC<ChatMainLayoutProps> = ({
   modelItems,
 }) => {
   // const styles = useStyles()
-
+  console.log('mainContent', mainContent)
   return (
     <div className="flex flex-col w-full h-screen bg-black/90 bg-gradient-to-br from-indigo-500/10 to-purple-500/30">
       <div className="flex justify-center items-center gap-2 w-full py-3 border-b border-white/10 bg-[#242424]">

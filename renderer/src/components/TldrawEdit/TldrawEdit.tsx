@@ -1,10 +1,9 @@
-'use client'
-
 import { useState, FC, useRef } from 'react'
 import { Drawer, Button, Tooltip } from 'antd'
 import { PictureOutlined } from '@ant-design/icons'
 // import dynamic from 'next/dynamic';
-import { Editor, setUserPreferences } from '@tldraw/tldraw'
+import { setUserPreferences, Tldraw } from '@tldraw/tldraw'
+import type { Editor } from '@tldraw/tldraw'
 import '@tldraw/tldraw/tldraw.css'
 import { getSvgAsImage } from './lib/getSvgAsImage'
 import { blobToBase64 } from './lib/blobToBase64'
@@ -63,17 +62,17 @@ const TldrawEdit: FC<TldrawEditProps> = ({ onSubmit }) => {
         }}
       >
         <div className={`w-full h-full ${classNames}`}>
-          {/* <Tldraw
+          <Tldraw
             onMount={(editor) => {
-              editorRef.current = editor;
+              editorRef.current = editor
               setUserPreferences({
                 isDarkMode: true,
-                id: 'tldraw'
-              });
-              refresh({});
+                id: 'tldraw',
+              })
+              refresh({})
             }}
             persistenceKey="tldraw"
-          /> */}
+          />
         </div>
       </Drawer>
     </>
@@ -85,13 +84,19 @@ function ExportButton({
   editor,
 }: {
   onSubmit: (dataUrl: string) => void
-  editor: Editor
+  editor: Editor | null
 }) {
   const [loading, setLoading] = useState(false)
   return (
     <Button
       type="primary"
       onClick={async (e) => {
+        if (!editor) {
+          // 关键的空检查
+          console.error('Editor instance is not available.')
+          setLoading(false) // 重置 loading 状态
+          return
+        }
         setLoading(true)
         try {
           e.preventDefault()

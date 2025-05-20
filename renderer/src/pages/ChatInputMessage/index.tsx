@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { Button } from 'antd'
 import { Suspense } from 'react'
 import { Skeleton } from 'antd'
 import { ChatMainLayout } from '../../components/ChatMainLayout'
@@ -25,7 +24,7 @@ const modelItems = [
 ]
 
 function ChatInputMessage() {
-  const [selectedModel, setSelectedModel] = useState()
+  const [selectedModel, setSelectedModel] = useState<string>()
   // modelItems.some((item) => item.key === typeFromUrl) ? typeFromUrl! : modelItems[0].key,
   React.useEffect(() => {}, [])
   const MainContent = useMemo(
@@ -37,7 +36,7 @@ function ChatInputMessage() {
     // const params = new URLSearchParams(searchParams)
     // params.set('type', model)
     // router.push(`${pathname}?${params.toString()}`)
-    // setSelectedModel(model)
+    setSelectedModel(model)
   }
   return (
     <Suspense fallback={<Loading />}>
