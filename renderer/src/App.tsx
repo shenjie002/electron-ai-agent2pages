@@ -48,7 +48,7 @@ function App() {
         />
       ))}
       {/* 可以添加預設路由或 404 路由 */}
-      <Route path="/" element={<Navigate to="/chatInputMessage" replace />} />{' '}
+      <Route path="/" element={<Navigate to="/login" replace />} />{' '}
       {/* 預設導航到儀表板 (如果已登入) */}
     </Routes>
   )

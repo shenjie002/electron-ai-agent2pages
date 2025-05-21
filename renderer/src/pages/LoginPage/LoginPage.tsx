@@ -240,7 +240,7 @@ function LoginPage() {
         </Title>
         <Input
           prefix={<UserOutlined className="text-gray-500" />}
-          placeholder="<代碼名稱>"
+          placeholder="<用户名稱>"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           size="large"
