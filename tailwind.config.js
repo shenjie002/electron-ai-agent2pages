@@ -9,12 +9,21 @@ module.exports = {
           '0%': { transform: 'translateY(-20px)', opacity: 0 },
           '100%': { transform: 'translateY(0)', opacity: 1 },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
         // ... other keyframes
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',
         'slide-down': 'slideDown 0.5s ease-out',
         // ... other animations
+        'float-slow': 'float 8s ease-in-out infinite',
+        'float-medium': 'float 6s ease-in-out infinite',
+        'float-fast': 'float 4s ease-in-out infinite',
+        'pulse-slow': 'pulse 4s ease-in-out infinite',
+        'pulse-medium': 'pulse 3s ease-in-out infinite',
       },
     },
   },

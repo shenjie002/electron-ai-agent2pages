@@ -69,6 +69,4 @@ const AssistantMessage: React.FC<AssistantMessageProps> = memo(
   },
 )
 
-AssistantMessage.displayName = 'AssistantMessage'
-
 export default AssistantMessage

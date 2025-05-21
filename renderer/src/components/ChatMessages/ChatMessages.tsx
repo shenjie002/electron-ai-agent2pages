@@ -96,6 +96,4 @@ const ChatMessages = forwardRef<{ scrollToBottom: () => void }, ChatMessagesProp
   },
 )
 
-ChatMessages.displayName = 'ChatMessages'
-
 export default ChatMessages
